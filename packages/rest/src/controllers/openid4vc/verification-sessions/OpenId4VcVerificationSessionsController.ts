@@ -96,7 +96,8 @@ export class OpenId4VcVerificationSessionsController extends Controller {
                     signedPayload: presentation.jwt.payload.toJson(),
                     header: presentation.jwt.header,
                   }
-                } else {
+                } else if ('compact' in presentation && 'prettyClaims' in presentation) {
+                  // This is an SD-JWT VC presentation
                   return {
                     format: ClaimFormat.SdJwtVc,
                     encoded: presentation.compact,
@@ -105,11 +106,18 @@ export class OpenId4VcVerificationSessionsController extends Controller {
                     signedPayload: presentation.payload,
                     header: presentation.header as Jwt['header'],
                   }
+                } else {
+                  // This is likely an MdocDeviceResponse or other format
+                  return {
+                    format: ClaimFormat.MsoMdoc,
+                    encoded: JSON.stringify(presentation),
+                    vcPayload: JSON.parse(JSON.stringify(presentation)),
+                  }
                 }
               }),
             }
           : undefined,
-      }
+      } as OpenId4VcVerificationSessionsGetVerifiedAuthorizationResponseResponse
     } catch (error) {
       this.setStatus(500)
       return apiErrorResponse(error)
