@@ -2512,45 +2512,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperledger/anoncreds-shared@npm:0.2.1":
-  version: 0.2.1
-  resolution: "@hyperledger/anoncreds-shared@npm:0.2.1"
-  checksum: 10c0/d8f49145bc0e5c3e2283a10e00dbd9ad03f247502bb65ac6ee417cb3186fe43e5c5951397f92af48da0c259f35a976d776adba3dbdf05052acb3b93f31cd4c59
-  languageName: node
-  linkType: hard
-
-"@hyperledger/anoncreds-shared@npm:^0.2.1":
+"@hyperledger/anoncreds-shared@npm:0.2.4":
   version: 0.2.4
   resolution: "@hyperledger/anoncreds-shared@npm:0.2.4"
   checksum: 10c0/af227e3c2a50a42763210c8a4a4051a540e70fbc9e9b7f6351baa22aae5e9d275451c0c007e11b70b62780dbd0b1151aedf35d7ea359c39740a15f1da083a3be
   languageName: node
   linkType: hard
 
-"@hyperledger/aries-askar-nodejs@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@hyperledger/aries-askar-nodejs@npm:0.2.0"
+"@hyperledger/aries-askar-nodejs@npm:^0.2.2":
+  version: 0.2.3
+  resolution: "@hyperledger/aries-askar-nodejs@npm:0.2.3"
   dependencies:
-    "@2060.io/ffi-napi": "npm:4.0.8"
-    "@2060.io/ref-napi": "npm:3.0.6"
-    "@hyperledger/aries-askar-shared": "npm:0.2.0"
-    "@mapbox/node-pre-gyp": "npm:^1.0.10"
-    node-cache: "npm:^5.1.2"
+    "@2060.io/ffi-napi": "npm:^4.0.9"
+    "@2060.io/ref-napi": "npm:^3.0.6"
+    "@hyperledger/aries-askar-shared": "npm:0.2.3"
+    "@mapbox/node-pre-gyp": "npm:^1.0.11"
     ref-array-di: "npm:^1.2.2"
     ref-struct-di: "npm:^1.1.1"
-  checksum: 10c0/f7ccdbc789861350863e7812a81179e88615027c412eed2a1774534c394b6c3d7afe3584c29ac320b9fedc97461a178f6a49d6bcd7d3236182bcb4519b79a6f3
+  checksum: 10c0/80f6f79e61a02712cd910d3e8a2c74eba754445db4f17d882b03288fbcec7d01cd22dfaad2846ca4df3259be757c0feae19c6f9dae023bd8a466c2f5bf9e37a9
   languageName: node
   linkType: hard
 
-"@hyperledger/aries-askar-shared@npm:0.2.0":
-  version: 0.2.0
-  resolution: "@hyperledger/aries-askar-shared@npm:0.2.0"
-  dependencies:
-    buffer: "npm:^6.0.3"
-  checksum: 10c0/03959a49bf5734149f0054742a4cd2ba8a26e57714747b41c694360d2fd3e49b12a6681a44b6dc4a460ed8a7bd8e2cca51dd650aacb9045608fd57d838991ad3
-  languageName: node
-  linkType: hard
-
-"@hyperledger/aries-askar-shared@npm:^0.2.0":
+"@hyperledger/aries-askar-shared@npm:0.2.3":
   version: 0.2.3
   resolution: "@hyperledger/aries-askar-shared@npm:0.2.3"
   dependencies:
@@ -6548,13 +6531,6 @@ __metadata:
     kind-of: "npm:^6.0.2"
     shallow-clone: "npm:^3.0.0"
   checksum: 10c0/637753615aa24adf0f2d505947a1bb75e63964309034a1cf56ba4b1f30af155201edd38d26ffe26911adaae267a3c138b344a4947d39f5fc1b6d6108125aa758
-  languageName: node
-  linkType: hard
-
-"clone@npm:2.x":
-  version: 2.1.2
-  resolution: "clone@npm:2.1.2"
-  checksum: 10c0/ed0601cd0b1606bc7d82ee7175b97e68d1dd9b91fd1250a3617b38d34a095f8ee0431d40a1a611122dcccb4f93295b4fdb94942aa763392b5fe44effa50c2d5e
   languageName: node
   linkType: hard
 
@@ -11888,15 +11864,6 @@ __metadata:
   dependencies:
     node-gyp: "npm:latest"
   checksum: 10c0/0eb269786124ba6fad9df8007a149e03c199b3e5a3038125dfb3e747c2d5113d406a4e33f4de1ea600aa2339be1f137d55eba1a73ee34e5fff06c52a5c296d1d
-  languageName: node
-  linkType: hard
-
-"node-cache@npm:^5.1.2":
-  version: 5.1.2
-  resolution: "node-cache@npm:5.1.2"
-  dependencies:
-    clone: "npm:2.x"
-  checksum: 10c0/2f91907510a1276415ae5898269d0765934d5a4f3682c8b1b19964694a9b841c8bd791e1a125d1f89050f412e1da5dd982179d714252b3a7223abb05b8cb24d5
   languageName: node
   linkType: hard
 
