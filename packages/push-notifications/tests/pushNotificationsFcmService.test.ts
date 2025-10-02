@@ -184,8 +184,15 @@ function createInboundMessageContext<T extends AgentMessage>(message: T) {
   return {
     agentContext: new AgentContext({ dependencyManager: new DependencyManager(), contextCorrelationId: '' }),
     message,
+    receivedAt: new Date(),
     assertReadyConnection: function (): ConnectionRecord {
       throw new Error('Function not implemented.')
+    },
+    setMessageHandler: function () {
+      // Mock implementation
+    },
+    setResponseMessage: function () {
+      // Mock implementation
     },
     toJSON: function (): {
       message: T
