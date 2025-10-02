@@ -50,6 +50,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
           cache: yarn
 
+      - name: Enable Corepack
+        run: corepack enable
+
       # Ignore scripts so we don't need libindy setup
       - name: Install dependencies
         run: yarn install --ignore-scripts
@@ -84,6 +87,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
           cache: yarn
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Install dependencies
         run: yarn install
 
@@ -109,6 +115,9 @@ jobs:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
           cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
 
       # Ignore scripts so we don't need libindy setup
       - name: Install dependencies
@@ -149,6 +158,10 @@ jobs:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
           cache: yarn
+        if: ${{ steps.release-please.outputs.release_created }}
+
+      - name: Enable Corepack
+        run: corepack enable
         if: ${{ steps.release-please.outputs.release_created }}
 
       # Ignore scripts so we don't need libindy setup
