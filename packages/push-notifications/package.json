@@ -1,5 +1,5 @@
 {
-  "name": "@credo-ts/push-notifications",
+  "name": "hashmap-credo-push-notifications",
   "main": "build/index",
   "types": "build/index",
   "version": "0.7.1",
@@ -11,29 +11,31 @@
   },
   "license": "Apache-2.0",
   "description": "Push notification plugin for Credo",
-  "homepage": "https://github.com/openwallet-foundation/credo-ts-ext/tree/main/packages/push-notifications",
+  "homepage": "https://github.com/HashMapsData2Value/credo-ts-ext/tree/main/packages/push-notifications",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openwallet-foundation/credo-ts-ext",
+    "url": "https://github.com/HashMapsData2Value/credo-ts-ext",
     "directory": "packages/push-notifications"
   },
   "scripts": {
     "sample": "tsnd --respawn samples/sample.ts",
     "build": "yarn run clean && yarn run compile",
-    "clean": "rimraf -rf ./build",
+    "clean": "rm -rf ./build",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "yarn run build",
     "test": "jest"
   },
   "devDependencies": {
+    "@credo-ts/askar": "^0.5.17",
+    "@credo-ts/core": "^0.5.17",
+    "@credo-ts/node": "^0.5.17",
     "@hyperledger/aries-askar-nodejs": "^0.2.0",
-    "@credo-ts/askar": "^0.5.0",
-    "@credo-ts/core": "^0.5.0",
-    "@credo-ts/node": "^0.5.0",
-    "ts-node-dev": "^1.1.8"
+    "@hyperledger/aries-askar-shared": "^0.2.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "~5.3.3"
   },
   "peerDependencies": {
-    "@credo-ts/core": "^0.5.0"
+    "@credo-ts/core": "^0.5.17"
   },
   "dependencies": {
     "class-transformer": "0.5.1",

@@ -1,5 +1,5 @@
 {
-  "name": "@credo-ts/redux-store",
+  "name": "hashmap-credo-redux-store",
   "main": "build/index",
   "types": "build/index",
   "version": "0.5.1",
@@ -11,15 +11,15 @@
   },
   "license": "Apache-2.0",
   "description": "Redux toolkit wrapper around Credo",
-  "homepage": "https://github.com/openwallet-foundation/credo-ts-ext/tree/main/packages/redux-store",
+  "homepage": "https://github.com/HashMapsData2Value/credo-ts-ext/tree/main/packages/redux-store",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openwallet-foundation/credo-ts-ext",
+    "url": "https://github.com/HashMapsData2Value/credo-ts-ext",
     "directory": "packages/redux-store"
   },
   "scripts": {
     "build": "yarn run clean && yarn run compile",
-    "clean": "rimraf -rf ./build",
+    "clean": "rm -rf ./build",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "yarn run build",
     "test": "jest"
@@ -29,10 +29,10 @@
     "react-redux": "^7.2.5"
   },
   "devDependencies": {
-    "@credo-ts/core": "^0.5.0",
+    "@credo-ts/core": "^0.5.17",
     "react": "^18.0.0"
   },
   "peerDependencies": {
-    "@credo-ts/core": "^0.5.0"
+    "@credo-ts/core": "^0.5.17"
   }
 }

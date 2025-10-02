@@ -19,11 +19,11 @@
       alt="typescript"
       src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
   /></a>
-    <a href="https://www.npmjs.com/package/@credo-ts/rest"
-    ><img
-      alt="@credo-ts/rest version"
-      src="https://img.shields.io/npm/v/@credo-ts/rest"
-  /></a>
+        <a href="https://www.npmjs.com/package/hashmap-credo-rest"
+    >
+      <img
+        alt="hashmap-credo-rest version"
+        src="https://img.shields.io/npm/v/hashmap-credo-rest"
 
 </p>
 <br />

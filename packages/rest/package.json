@@ -1,5 +1,5 @@
 {
-  "name": "@credo-ts/rest",
+  "name": "hashmap-credo-rest",
   "main": "build/index",
   "types": "build/index",
   "version": "0.10.0",
@@ -11,10 +11,10 @@
   },
   "license": "Apache-2.0",
   "description": "Rest API for using Credo over HTTP",
-  "homepage": "https://github.com/openwallet-foundation/credo-ts-ext/tree/main/packages/rest",
+  "homepage": "https://github.com/HashMapsData2Value/credo-ts-ext/tree/main/packages/rest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openwallet-foundation/credo-ts-ext",
+    "url": "https://github.com/HashMapsData2Value/credo-ts-ext",
     "directory": "packages/rest"
   },
   "bin": {
@@ -28,20 +28,20 @@
     "sample:cli-config": "yarn tsoa && tsnd --respawn src/cli.ts --config ./samples/cliConfig.json",
     "sample:cli": "yarn tsoa && sh samples/sampleCli.sh",
     "build": "yarn run clean && yarn run compile",
-    "clean": "rimraf -rf ./build",
+    "clean": "rm -rf ./build",
     "compile": "yarn tsoa && tsc -p tsconfig.build.json",
     "prepublishOnly": "yarn run build",
     "test": "jest"
   },
   "dependencies": {
-    "@credo-ts/anoncreds": "^0.5.1",
-    "@credo-ts/askar": "^0.5.1",
-    "@credo-ts/cheqd": "^0.5.1",
-    "@credo-ts/core": "^0.5.1",
-    "@credo-ts/indy-vdr": "^0.5.1",
-    "@credo-ts/node": "^0.5.1",
-    "@credo-ts/openid4vc": "^0.5.1",
-    "@credo-ts/tenants": "^0.5.1",
+    "@credo-ts/anoncreds": "^0.5.17",
+    "@credo-ts/askar": "^0.5.17",
+    "@credo-ts/cheqd": "^0.5.17",
+    "@credo-ts/core": "^0.5.17",
+    "@credo-ts/indy-vdr": "^0.5.17",
+    "@credo-ts/node": "^0.5.17",
+    "@credo-ts/openid4vc": "^0.5.17",
+    "@credo-ts/tenants": "^0.5.17",
     "@hyperledger/anoncreds-nodejs": "^0.2.1",
     "@hyperledger/aries-askar-nodejs": "^0.2.0",
     "@hyperledger/indy-vdr-nodejs": "^0.2.0",
@@ -62,6 +62,9 @@
     "reflect-metadata": "^0.1.13 || ^0.2.0"
   },
   "devDependencies": {
+    "@hyperledger/anoncreds-shared": "^0.2.1",
+    "@hyperledger/aries-askar-shared": "^0.2.0",
+    "@hyperledger/indy-vdr-shared": "^0.2.0",
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
