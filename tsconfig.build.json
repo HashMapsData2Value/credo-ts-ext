@@ -6,7 +6,9 @@
     "sourceMap": true,
     "strict": true,
     "noEmitOnError": true,
-    "lib": ["ES2021"],
+    "lib": [
+      "ES2021"
+    ],
     "types": [],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

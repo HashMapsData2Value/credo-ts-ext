@@ -79,43 +79,43 @@ export class OpenId4VcVerificationSessionsController extends Controller {
         ...verifiedAuthorizationResponse,
         presentationExchange: verifiedAuthorizationResponse.presentationExchange
           ? {
-              ...verifiedAuthorizationResponse.presentationExchange,
-              presentations: verifiedAuthorizationResponse.presentationExchange.presentations.map((presentation) => {
-                if (presentation instanceof W3cJsonLdVerifiablePresentation) {
-                  return {
-                    format: presentation.claimFormat,
-                    encoded: presentation.toJSON(),
-                    vcPayload: presentation.toJSON(),
-                  }
-                } else if (presentation instanceof W3cJwtVerifiablePresentation) {
-                  return {
-                    format: presentation.claimFormat,
-                    encoded: presentation.serializedJwt,
-                    vcPayload: presentation.presentation.toJSON(),
-
-                    signedPayload: presentation.jwt.payload.toJson(),
-                    header: presentation.jwt.header,
-                  }
-                } else if ('compact' in presentation && 'prettyClaims' in presentation) {
-                  // This is an SD-JWT VC presentation
-                  return {
-                    format: ClaimFormat.SdJwtVc,
-                    encoded: presentation.compact,
-                    vcPayload: presentation.prettyClaims,
-
-                    signedPayload: presentation.payload,
-                    header: presentation.header as Jwt['header'],
-                  }
-                } else {
-                  // This is likely an MdocDeviceResponse or other format
-                  return {
-                    format: ClaimFormat.MsoMdoc,
-                    encoded: JSON.stringify(presentation),
-                    vcPayload: JSON.parse(JSON.stringify(presentation)),
-                  }
+            ...verifiedAuthorizationResponse.presentationExchange,
+            presentations: verifiedAuthorizationResponse.presentationExchange.presentations.map((presentation) => {
+              if (presentation instanceof W3cJsonLdVerifiablePresentation) {
+                return {
+                  format: presentation.claimFormat,
+                  encoded: presentation.toJSON(),
+                  vcPayload: presentation.toJSON(),
                 }
-              }),
-            }
+              } else if (presentation instanceof W3cJwtVerifiablePresentation) {
+                return {
+                  format: presentation.claimFormat,
+                  encoded: presentation.serializedJwt,
+                  vcPayload: presentation.presentation.toJSON(),
+
+                  signedPayload: presentation.jwt.payload.toJson(),
+                  header: presentation.jwt.header,
+                }
+              } else if ('compact' in presentation && 'prettyClaims' in presentation) {
+                // This is an SD-JWT VC presentation
+                return {
+                  format: ClaimFormat.SdJwtVc,
+                  encoded: presentation.compact,
+                  vcPayload: presentation.prettyClaims,
+
+                  signedPayload: presentation.payload,
+                  header: presentation.header as Jwt['header'],
+                }
+              } else {
+                // This is likely an MdocDeviceResponse or other format
+                return {
+                  format: ClaimFormat.MsoMdoc,
+                  encoded: JSON.stringify(presentation),
+                  vcPayload: JSON.parse(JSON.stringify(presentation)),
+                }
+              }
+            }),
+          }
           : undefined,
       } as OpenId4VcVerificationSessionsGetVerifiedAuthorizationResponseResponse
     } catch (error) {

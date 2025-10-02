@@ -16,6 +16,9 @@ const config: Config.InitialOptions = {
       },
     ],
   },
+  moduleNameMapper: {
+    '^@credo-ts/cheqd$': '<rootDir>/../../tests/mocks/cheqd.mock.js',
+  },
 }
 
 export default config

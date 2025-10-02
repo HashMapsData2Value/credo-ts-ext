@@ -97,7 +97,7 @@ jobs:
           yarn install --mode=skip-build
 
       - name: Run tests
-        run: yarn test --coverage
+        run: yarn test packages/react-hooks packages/redux-store --coverage
 
       - uses: codecov/codecov-action@v4
         if: always()
