@@ -48,7 +48,6 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
 
       - name: Enable Corepack
         run: corepack enable
@@ -85,7 +84,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
 
       - name: Enable Corepack
         run: corepack enable
@@ -114,7 +112,6 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
 
       - name: Enable Corepack
         run: corepack enable
@@ -157,7 +154,6 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
         if: ${{ steps.release-please.outputs.release_created }}
 
       - name: Enable Corepack
