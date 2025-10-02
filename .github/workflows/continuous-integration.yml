@@ -52,10 +52,12 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      # Allow lockfile updates for dependency resolutions  
-      # Skip build scripts to avoid native dependency compilation issues
+      # Clean any corrupted state and install with skip-build mode
+      # This prevents ffi-napi and other native dependency build failures
       - name: Install dependencies
-        run: yarn install --mode=update-lockfile
+        run: |
+          rm -rf .yarn/install-state.gz || true
+          yarn install --mode=skip-build
 
       - name: Linting
         run: yarn lint
@@ -90,7 +92,9 @@ jobs:
         run: corepack enable
 
       - name: Install dependencies
-        run: yarn install
+        run: |
+          rm -rf .yarn/install-state.gz || true
+          yarn install --mode=skip-build
 
       - name: Run tests
         run: yarn test --coverage
