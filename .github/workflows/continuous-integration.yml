@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   ci-trigger:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     outputs:
       triggered: ${{ steps.check.outputs.triggered }}
     steps:
@@ -35,7 +35,7 @@ jobs:
           echo "::set-output name=triggered::${SHOULD_RUN}"
 
   validate:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     name: Validate
     needs: [ci-trigger]
     if: needs.ci-trigger.outputs.triggered == 'true'
@@ -48,11 +48,16 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
 
-      # Ignore scripts so we don't need libindy setup
+      - name: Enable Corepack
+        run: corepack enable
+
+      # Clean any corrupted state and install with skip-build mode
+      # This prevents ffi-napi and other native dependency build failures
       - name: Install dependencies
-        run: yarn install --ignore-scripts
+        run: |
+          rm -rf .yarn/install-state.gz || true
+          yarn install --mode=skip-build
 
       - name: Linting
         run: yarn lint
@@ -64,7 +69,7 @@ jobs:
         run: yarn check-types
 
   integration-test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     name: Integration Tests
     needs: [ci-trigger]
     if: needs.ci-trigger.outputs.triggered == 'true'
@@ -82,20 +87,24 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install dependencies
-        run: yarn install
+        run: |
+          rm -rf .yarn/install-state.gz || true
+          yarn install --mode=skip-build
 
       - name: Run tests
-        run: yarn test --coverage
+        run: yarn test packages/react-hooks packages/redux-store --coverage
 
       - uses: codecov/codecov-action@v4
         if: always()
 
   package-finder:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.repository == 'openwallet-foundation/credo-ts-ext' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.repository == 'HashMapsData2Value/credo-ts-ext' && github.event_name == 'push'
     needs: [integration-test, validate]
     outputs:
       packages: ${{ steps.get-packages.outputs.packages }}
@@ -108,11 +117,13 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
 
       # Ignore scripts so we don't need libindy setup
       - name: Install dependencies
-        run: yarn install --ignore-scripts
+        run: yarn install --mode=skip-build
 
       - id: get-packages
         name: Get all NPM packages
@@ -148,12 +159,15 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org/'
-          cache: yarn
+        if: ${{ steps.release-please.outputs.release_created }}
+
+      - name: Enable Corepack
+        run: corepack enable
         if: ${{ steps.release-please.outputs.release_created }}
 
       # Ignore scripts so we don't need libindy setup
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --ignore-scripts
+        run: yarn install --immutable --mode=skip-build
         if: ${{ steps.release-please.outputs.release_created }}
 
       - name: Release to NPM

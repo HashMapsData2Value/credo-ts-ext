@@ -7,3 +7,9 @@ coverage
 .DS_Store
 logs.txt
 *.tgz
+
+# Yarn cache and state files (Yarn 4/Berry)
+.yarn/cache/
+.yarn/install-state.gz
+.yarn/unplugged/
+.yarn/build-state.yml

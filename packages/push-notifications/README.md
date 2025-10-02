@@ -19,11 +19,11 @@
       alt="typescript"
       src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
   /></a>
-    <a href="https://www.npmjs.com/package/@credo-ts/push-notifications"
-    ><img
-      alt="@credo-ts/push-notifications version"
-      src="https://img.shield.io/npm/v/@credo-ts/push-notifications"
-  /></a>
+        <a href="https://www.npmjs.com/package/hashmap-credo-push-notifications"
+    >
+      <img
+        alt="hashmap-credo-push-notifications version"
+        src="https://img.shield.io/npm/v/hashmap-credo-push-notifications"
 
 </p>
 <br />

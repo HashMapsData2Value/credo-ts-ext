@@ -7,13 +7,13 @@
     "packages/*"
   ],
   "repository": {
-    "url": "https://github.com/openwallet-foundation/credo-ts-ext",
+    "url": "https://github.com/HashMapsData2Value/credo-ts-ext",
     "type": "git"
   },
   "scripts": {
     "check-types": "yarn check-types:build && yarn check-types:tests",
     "check-types:tests": "tsc -p tsconfig.test.json --noEmit",
-    "check-types:build": "yarn workspaces run tsc --noEmit -p tsconfig.build.json",
+    "check-types:build": "yarn workspaces foreach --all run tsc --noEmit -p tsconfig.build.json",
     "prettier": "prettier '**/*.+(js|json|ts|tsx|md|yml|yaml)'",
     "format": "yarn prettier --write",
     "check-format": "yarn prettier --list-different",
@@ -25,6 +25,9 @@
     "@types/eslint": "^8.56.2",
     "@types/jest": "^29.5.2",
     "@types/node": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-redux": "^7.1.25",
+    "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
     "conventional-changelog-conventionalcommits": "^7.0.2",
@@ -38,14 +41,32 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "~5.3.3",
-    "rimraf": "^5.0.5"
+    "typescript": "~5.3.3"
   },
   "engines": {
     "node": ">= 18"
   },
   "resolutions": {
     "@jest/types": "^29.5.0",
-    "@types/node": "^18.0.0"
-  }
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-redux": "^7.1.25",
+    "@types/yargs": "^17.0.24",
+    "@hyperledger/aries-askar-shared": "0.2.3",
+    "@hyperledger/anoncreds-shared": "0.2.4",
+    "@hyperledger/aries-askar-nodejs": "^0.2.2",
+    "@hyperledger/anoncreds-nodejs": "^0.2.1",
+    "@2060.io/ffi-napi": "4.0.9",
+    "@credo-ts/core": "npm:hashmap-credo-core@^0.5.20",
+    "@credo-ts/anoncreds": "npm:hashmap-credo-anoncreds@^0.5.20",
+    "@credo-ts/askar": "npm:hashmap-credo-askar@^0.5.20",
+    "@credo-ts/cheqd": "npm:hashmap-credo-cheqd@^0.5.20",
+    "@credo-ts/indy-vdr": "npm:hashmap-credo-indy-vdr@^0.5.20",
+    "@credo-ts/node": "npm:hashmap-credo-node@^0.5.20",
+    "@credo-ts/openid4vc": "npm:hashmap-credo-openid4vc@^0.5.20",
+    "@credo-ts/question-answer": "npm:hashmap-credo-question-answer@^0.5.20",
+    "@credo-ts/tenants": "npm:hashmap-credo-tenants@^0.5.20",
+    "@credo-ts/react-native": "npm:hashmap-credo-react-native@^0.5.20"
+  },
+  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }

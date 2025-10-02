@@ -1,5 +1,5 @@
 {
-  "name": "@credo-ts/react-hooks",
+  "name": "hashmap-credo-react-hooks",
   "main": "build/index",
   "types": "build/index",
   "version": "0.6.1",
@@ -11,10 +11,10 @@
   },
   "license": "Apache-2.0",
   "description": "Exposes useful React hooks that allow easy interaction with Credo.",
-  "homepage": "https://github.com/openwallet-foundation/credo-ts-ext/tree/main/packages/react-hooks",
+  "homepage": "https://github.com/HashMapsData2Value/credo-ts-ext/tree/main/packages/react-hooks",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openwallet-foundation/credo-ts-ext",
+    "url": "https://github.com/HashMapsData2Value/credo-ts-ext",
     "directory": "packages/react-hooks"
   },
   "scripts": {
@@ -28,13 +28,13 @@
     "rxjs": "^7.2.0"
   },
   "devDependencies": {
-    "@credo-ts/core": "^0.5.0",
-    "@credo-ts/question-answer": "^0.5.0",
+    "@credo-ts/core": "^0.5.19",
+    "@credo-ts/question-answer": "^0.5.19",
     "@types/react": "^18.2.14"
   },
   "peerDependencies": {
-    "@credo-ts/question-answer": "^0.5.0",
-    "@credo-ts/core": "^0.5.0",
+    "@credo-ts/core": "^0.5.19",
+    "@credo-ts/question-answer": "^0.5.19",
     "react": ">=17.0.0 <19.0.0"
   }
 }

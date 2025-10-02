@@ -19,17 +19,17 @@
       alt="typescript"
       src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
   /></a>
-    <a href="https://www.npmjs.com/package/@credo-ts/transport-ble"
+    <a href="https://www.npmjs.com/package/hashmap-credo-transport-ble"
     ><img
-      alt="@credo-ts/transport-ble version"
-      src="https://img.shield.io/npm/v/@credo-ts/transport-ble"
+      alt="hashmap-credo-transport-ble version"
+      src="https://img.shield.io/npm/v/hashmap-credo-transport-ble"
   /></a>
   <br />
 </p>
 
 The Credo BLE Transport package provides a simple way to add Bluetooth Low Energy (BLE) data transport into Credo React Native mobile agents.
 
-It implements the same transport interface as the outbound transports in [@credo-ts/core](https://www.npmjs.com/package/@credo-ts/core), and the inbound transports in [@credo-ts/node](https://www.npmjs.com/package/@credo-ts/node).
+It implements the same transport interface as the outbound transports in [hashmap-credo-core](https://www.npmjs.com/package/hashmap-credo-core), and the inbound transports in [hashmap-credo-node](https://www.npmjs.com/package/hashmap-credo-node).
 
 With this transport enabled, Credo React Native mobile agents gain the ability to do offline DIDComm exchanges using Bluetooth Low Energy (BLE).
 
@@ -44,7 +44,7 @@ We're this discussing if this is the best approach to use in future versions. If
 ## Installing the required dependencies
 
 ```sh
-yarn add @credo-ts/transport-ble @credo-ts/core @credo-ts/react-native @animo-id/react-native-ble-didcomm
+yarn add hashmap-credo-transport-ble hashmap-credo-core hashmap-credo-react-native @animo-id/react-native-ble-didcomm
 ```
 
 ## Configuration
@@ -60,9 +60,9 @@ This means that the agent acting as the connection initiator should use the `Cen
 ```ts
 // If you want to register the transports only after initializing the agent, you can do this anywhere else in your app, and just leave out the agent config and initialization
 
-import { BleOutboundTransport, BleInboundTransport } from '@credo-ts/transport-ble'
-import { Agent } from '@credo-ts/core'
-import { agentDependencies } from '@credo-ts/react-native'
+import { BleOutboundTransport, BleInboundTransport } from 'hashmap-credo-transport-ble'
+import { Agent } from 'hashmap-credo-core'
+import { agentDependencies } from 'hashmap-credo-react-native'
 import {
   Central,
   Peripheral,

@@ -19,10 +19,10 @@
       alt="typescript"
       src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
   /></a>
-    <a href="https://www.npmjs.com/package/@credo-ts/redux-store"
+    <a href="https://www.npmjs.com/package/hashmap-credo-redux-store"
     ><img
-      alt="@credo-ts/redux-store version"
-      src="https://img.shields.io/npm/v/@credo-ts/redux-store"
+      alt="hashmap-credo-redux-store version"
+      src="https://img.shields.io/npm/v/hashmap-credo-redux-store"
   /></a>
 
 </p>

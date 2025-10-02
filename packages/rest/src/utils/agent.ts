@@ -126,6 +126,7 @@ export function getAgentModules(options: {
             if (firstCredential.format === 'vc+sd-jwt') {
               return {
                 format: 'vc+sd-jwt',
+                credentialSupportedId: firstCredential.credentialSupportedId,
                 issuer: firstCredential.issuer,
                 holder: holderBinding,
                 payload: firstCredential.payload,
