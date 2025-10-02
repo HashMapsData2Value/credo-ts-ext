@@ -52,9 +52,10 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      # Ignore scripts so we don't need libindy setup
+      # Allow lockfile updates for dependency resolutions  
+      # Skip build scripts to avoid native dependency compilation issues
       - name: Install dependencies
-        run: yarn install --mode=skip-build
+        run: yarn install --mode=update-lockfile
 
       - name: Linting
         run: yarn lint

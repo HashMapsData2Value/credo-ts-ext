@@ -5,22 +5,7 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@2060.io/ffi-napi@npm:4.0.8":
-  version: 4.0.8
-  resolution: "@2060.io/ffi-napi@npm:4.0.8"
-  dependencies:
-    "@2060.io/ref-napi": "npm:^3.0.6"
-    debug: "npm:^4.1.1"
-    get-uv-event-loop-napi-h: "npm:^1.0.5"
-    node-addon-api: "npm:^3.0.0"
-    node-gyp: "npm:latest"
-    node-gyp-build: "npm:^4.2.1"
-    ref-struct-di: "npm:^1.1.0"
-  checksum: 10c0/b58451b1bf3c4a5cceb1fb50e259b44a9e22fb243c7c94af008b8e2288fc5e3dcb246d9a2130b9fde7547f6d7d073da13d93f42f7f6461a42c61f3d57868cb7e
-  languageName: node
-  linkType: hard
-
-"@2060.io/ffi-napi@npm:^4.0.9":
+"@2060.io/ffi-napi@npm:4.0.9":
   version: 4.0.9
   resolution: "@2060.io/ffi-napi@npm:4.0.9"
   dependencies:
