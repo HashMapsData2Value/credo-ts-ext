@@ -54,7 +54,7 @@ jobs:
 
       # Ignore scripts so we don't need libindy setup
       - name: Install dependencies
-        run: yarn install --ignore-scripts
+        run: yarn install --mode=skip-build
 
       - name: Linting
         run: yarn lint
@@ -118,7 +118,7 @@ jobs:
 
       # Ignore scripts so we don't need libindy setup
       - name: Install dependencies
-        run: yarn install --ignore-scripts
+        run: yarn install --mode=skip-build
 
       - id: get-packages
         name: Get all NPM packages
@@ -162,7 +162,7 @@ jobs:
 
       # Ignore scripts so we don't need libindy setup
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --ignore-scripts
+        run: yarn install --immutable --mode=skip-build
         if: ${{ steps.release-please.outputs.release_created }}
 
       - name: Release to NPM
